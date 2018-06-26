@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>title</title>
+    <link rel="icon" href=""/>
+    <link rel="stylesheet" href="">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .singUp {
+            /*box-sizing: content-box;*/
+            width: 600px;
+            border: 1px solid #666;
+            border-radius: 10px;
+            margin: 50px auto;
+            font-size: 14px;
+            background: gainsboro;
+        }
+
+        .singUp h3 {
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            color: gray;
+        }
+
+        .singUp .line {
+            line-height: 50px;
+        }
+
+        .singUp .line span {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            color: lightseagreen;
+        }
+
+        .singUp .line input {
+            width: 250px;
+            height: 40px;
+            border: 1px solid lightsteelblue;
+            margin: 0 10px;
+        }
+
+        .singUp .line b {
+            font-weight: 300;
+            float: right;
+            width: 150px;
+            text-align: left;
+            color: red;
+            margin-left: 10px;
+            display: none;
+        }
+
+        .singUp .line .submit {
+            display: block;
+            width: 150px;
+            border: none;
+            background: blue;
+            color: #fff;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="singUp" id="singUp">
+    <form action="个人中心.html" autocomplete="on">
+        <h3>个人注册中心</h3>
+        <div class="line">
+            <span>用户名</span>
+            <input type="text" autofocus name="userName" pattern="[a-zA-Z]\w{6,11}" required>
+            <b>请输入正确的用户名</b>
+        </div>
+        <div class="line">
+            <span>密码</span>
+            <input type="password" name="passWord" maxlength="15" minlength="9" required>
+            <b>请输入正确的密码</b>
+        </div>
+        <div class="line">
+            <span>邮箱</span>
+            <input type="email" name="email" required>
+            <b>请输入正确的邮箱</b>
+        </div>
+        <div class="line">
+            <span>个人主页</span>
+            <input type="url" name="url">
+            <b>非必填</b>
+        </div>
+        <div class="line">
+            <span>手机号</span>
+            <input type="text" name="number" required pattern="^1\d{10}$" maxlength="11">
+            <b>请输入正确手机号码</b>
+        </div>
+        <div class="line">
+            <span>年龄</span>
+            <input type="number" name="age" required max="65" min="18">
+            <b>请输入正确的年龄</b>
+        </div>
+        <div class="line">
+            <span>出生日期</span>
+            <input type="date" name="date" required max="65" min="18">
+            <b>请输入正确的出生日期</b>
+        </div>
+        <div class="line">
+            <input type="submit" value="注册提交" class="submit">
+        </div>
+    </form>
+</div>
+<script>
+    //表单常用属性
+    /*autocomplete='on'  自动验证变淡
+    * novalidate  取消表单验证
+    * action  点击提交 跳转的页面
+    * autofocus  自动获取光标
+    * required  必填
+    * disable  不可填
+    * pattern  正则校验
+    * maxlength  最长长度
+    * max  最大值
+    * min 最小值
+    * minlength 最小长度
+    * type 表单类型
+    * text url  emal number date password button submit
+    * */
+
+    var singUp = document.getElementById('singUp')
+    var inputs = singUp.getElementsByTagName('input')
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].onfocus = function () {
+            this.nextElementSibling.style.display = 'block'
+        }
+        inputs[i].onblur=function () {
+            if (this.validity.valid){
+                this.nextElementSibling.innerHTML='✓'
+                this.nextElementSibling.style.color='green'
+
+            }else{
+                this.nextElementSibling.innerHTML='×'
+                this.nextElementSibling.style.color='red'
+            }
+        }
+    }
+</script>
+</body>
+</html>
