@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: #ccc;
+}
+#box{
+    padding: 20px;
+}
+#box ul{
+    width: 18%;
+    margin: 0 1% 10px;
+    float: left;
+}
+#box ul li{
+    width: 100%;
+    background: #fff;
+    box-shadow: 1px 2px 3px gray;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+#box ul li .bg{
+    width: 100%;
+    height: 90%;
+    background: url("../img/loading.gif") no-repeat;
+    background-size: 100% 100%;
+}
+ul li .bg img{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+ul li a{
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #666;
+}
+ul li a:hover{
+    color: red;
+}
+#up{
+    text-align: center;
+    /*display: inline-block;*/
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background:gray;
+    position: fixed;
+    right: 100px;
+    bottom:100px
+}
